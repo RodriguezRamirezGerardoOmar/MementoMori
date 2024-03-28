@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import cn from "classnames";
 
-const TextFieldComponent = () => {
-  return (
-    <input type='text' className='rounded-[16px] border-2' />
-  )
+interface TextFieldComponentProps {
+  className?: string;
+  text?: string;
 }
 
-export default TextFieldComponent
+const TextFieldComponent = ({ className, text }: TextFieldComponentProps) => {
+  const style = cn(className, "rounded-[16px] border-2");
+  return (
+    <>
+      {text ? <p>{text}</p> : null}
+      <input type="text" className={style} />
+    </>
+  );
+};
+
+export default TextFieldComponent;

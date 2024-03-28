@@ -6,7 +6,7 @@ interface ButtonComponentProps {
   onClick?: () => void;
   className?: string;
 }
-//olaaa
+
 const ButtonComponent = ({ text, onClick, className }:ButtonComponentProps ) => {
   const style = cn(className,'bg-gradient-to-r from-[#0f62df] to-[#083579] from-50% p-2 rounded-[8px] hover:scale-110')
   return (
@@ -15,3 +15,4 @@ const ButtonComponent = ({ text, onClick, className }:ButtonComponentProps ) => 
 }
 
 export default ButtonComponent
+
