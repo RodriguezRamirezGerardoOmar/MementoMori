@@ -41,7 +41,7 @@ const SelectComponent: React.FC<SelectProps> = ({
         value={options[0]}
         onChange={newSelected => {
           if (onSelect) {
-            onSelect(newSelected);
+            onSelect(newSelected.label);
           }
           if (reference.current) {
             reference.current.dispatchEvent(new Event('change', { bubbles: true }));

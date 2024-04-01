@@ -1,28 +1,34 @@
-"use client"
+import React from 'react';
+//import HeaderMenu from '@/app/components/HeaderMenu';
+import CardLandingComponent from './components/CardLandingComponent';
+import BannerComponent from './components/BannerComponent';
+import LogoComponent from './components/LogoComponent';
+import HeaderMenu from './components/HeaderMenu'
 
-import Image from "next/image";
-import ButtonComponent from "@/app/components/ButtonComponent";
-import TextFieldComponent from "./components/TextFieldComponent";
-import SelectComponent from "./components/SelectComponent";
-import CardInventarioComponent from "./components/CardInventarioComponent";
 
-export default function Home() {
-  const options = [
-    { value: "1", label: "Option 1", id: 1 },
-    { value: "2", label: "Option 2", id: 2 },
-    { value: "3", label: "Option 3", id: 3 },
-  ];
-  const onSelect = (value: string) => {
-    console.log(value);
-  };
+
+const HomePage = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <ButtonComponent text="Enviar" />
-      <form>
-        <TextFieldComponent text="texto" />
-        <SelectComponent options={options} onSelect={onSelect} />
-      </form>
-      <CardInventarioComponent nombre="Producto 1" precio={100} cantidad={10} imagenSrc="/images/producto1.jpg" />
-    </main>
+    <div className="flex flex-col h-screen justify-between bg-white">
+      <HeaderMenu/>
+      <LogoComponent/>
+      <div>   
+      <BannerComponent
+          title="Conoce la salud financiera de tu negocio"
+          subtitle="Administra tu negocio con Microgestor"
+          features={[
+            'Conoce tus gastos, costos, inventario y',
+            'administra tu negocio con Microgestor',
+          ]}
+        />    
+      </div>
+      <main className="px-4 py-2 flex-grow bg-white">
+        <CardLandingComponent/>
+        <CardLandingComponent/>
+        <CardLandingComponent/>
+      </main>
+    </div>
   );
-}
+};
+
+export default HomePage;
